@@ -125,4 +125,26 @@ public class JobData {
         }
     }
 
+    //searchTerm is string
+    public static ArrayList<HashMap<String, String>> findByValue(String value) {
+
+        loadData();
+
+        ArrayList<HashMap<String, String>> jobsReturn = new ArrayList<>();
+
+        for (HashMap<String, String> row : allJobs) {
+
+            for (String column : row.keySet()) {
+                //define column as keys?
+                //HashMap<String, String> column;
+                String aValue = row.get(column);
+
+                if (aValue.contains(value)) {
+                    jobsReturn.add(row);
+                }
+            }
+
+        }
+        return jobsReturn;
+    }
 }
