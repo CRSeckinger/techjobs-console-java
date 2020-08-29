@@ -139,11 +139,11 @@ public class JobData {
                 //HashMap<String, String> column;
                 String aValue = row.get(column);
 
-                if (aValue.contains(value)) {
+                if (aValue.toLowerCase().contains(value.toLowerCase())) {
                     jobsReturn.add(row);
+
                 }
             }
-
         }
         return jobsReturn;
     }
